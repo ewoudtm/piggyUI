@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import muiTheme from './assets/styles/theme'
+import LoadingIndicator from './components/LoadingIndicator'
 import './App.sass'
 
 class App extends Component {
@@ -16,6 +17,7 @@ class App extends Component {
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
         <div className="app">
+          <LoadingIndicator />
           <h1>Shuuuuut Uuuuup!</h1>
           { this.props.children }
         </div>
