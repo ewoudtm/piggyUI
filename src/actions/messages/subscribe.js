@@ -1,7 +1,7 @@
 // src/actions/messages/subscribe.js
 import API from '../../lib/api'
 import { history } from '../../store'
-import { CALL_API } from '../../middleware/api'
+import { CALL_API, FIND } from '../../middleware/api'
 
 export const SUBSCRIBED_TO_MESSAGES_SERVICE = 'SUBSCRIBED_TO_MESSAGES_SERVICE'
 export const MESSAGE_CREATED = 'MESSAGE_CREATED'
@@ -21,9 +21,15 @@ export default () => {
     dispatch({
       [CALL_API]: {
         service: 'messages',
-        method: 'find',
+        method: FIND,
         type: SUBSCRIBED_TO_MESSAGES_SERVICE,
         authenticate: true,
+        params: {
+          query: {
+            $sort: { createdAt: -1},
+            $limit: 25,
+          },
+        },
       }
     })
   }

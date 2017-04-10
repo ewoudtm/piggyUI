@@ -1,15 +1,13 @@
-import API from '../../lib/api'
-
-const api = new API()
-const messages = api.service('messages')
+import { CALL_API, CREATE } from '../../middleware/api'
 
 export default (messageText) => {
-  api.app.authenticate()
-    .then(() => {
-      messages.create({ text: messageText })
-    })
-
   return {
-    type: 'SHUT UP'
+    [CALL_API]: {
+      service: 'messages',
+      method: CREATE,
+      type: 'MESSAGE_POSTED',
+      authenticate: true,
+      params: { text: messageText }
+    }
   }
 }

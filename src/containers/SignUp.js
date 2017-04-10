@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router'
 import Paper from 'material-ui/Paper'
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
@@ -119,7 +120,12 @@ class SignUp extends PureComponent {
         <TextField fullWidth={true} ref="passwordConfirmation" type="password" onChange={this.validatePasswordConfirmation.bind(this)} hintText="Your password, again" errorText={this.state.passwordConfirmationError} />
 
         <div style={{ margin: '24px 0 0', textAlign: 'right' }}>
-          <RaisedButton label="Sign In" secondary={true} style={{ marginRight: '1rem' }} />
+        <Link to={'/users/sign-in'}>
+          <RaisedButton
+            label="Sign In"
+            secondary={true}
+            style={{ marginRight: '1rem' }} />
+        </Link>
           <RaisedButton label="Sign Up" primary={true} onClick={this.submitForm.bind(this)} />
         </div>
       </Paper>

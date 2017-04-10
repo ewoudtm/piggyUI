@@ -8,7 +8,7 @@ import {
 export default (state = [], { type, payload } = {}) => {
   switch (type) {
     case SUBSCRIBED_TO_MESSAGES_SERVICE :
-      return [].concat(payload)
+      return ([].concat(payload)).reverse()
 
     case MESSAGE_CREATED :
       const newMessage = Object.assign({}, payload)

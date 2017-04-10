@@ -15,7 +15,7 @@ export default (user) => {
       history.push('/')
     })
     .catch((error) => {
-      console.error('oops there has been an error')
+      console.error('oops there has been an error', error)
     })
   }
 }
