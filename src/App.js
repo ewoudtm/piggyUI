@@ -18,7 +18,6 @@ class App extends Component {
       <MuiThemeProvider muiTheme={muiTheme}>
         <div className="app">
           <LoadingIndicator />
-          <h1>Shuuuuut Uuuuup!</h1>
           { this.props.children }
         </div>
       </MuiThemeProvider>
