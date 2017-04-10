@@ -1,5 +1,7 @@
 // src/actions/messages/subscribe.js
-import API from '../../middleware/api'
+import API from '../../lib/api'
+import { history } from '../../store'
+import { CALL_API } from '../../middleware/api'
 
 export const SUBSCRIBED_TO_MESSAGES_SERVICE = 'SUBSCRIBED_TO_MESSAGES_SERVICE'
 export const MESSAGE_CREATED = 'MESSAGE_CREATED'
@@ -16,16 +18,14 @@ export default () => {
     messages.on('patched', (message) => { dispatch(updatedMessage(message)) })
     messages.on('removed', (message) => { dispatch(removedMessage(message)) })
 
-    api.app.authenticate()
-      .then(() => {
-        messages.find()
-          .then((messages) => {
-            dispatch({
-              type: SUBSCRIBED_TO_MESSAGES_SERVICE,
-              payload: messages.data
-            })
-          })
-        })
+    dispatch({
+      [CALL_API]: {
+        service: 'messages',
+        method: 'find',
+        type: SUBSCRIBED_TO_MESSAGES_SERVICE,
+        authenticate: true,
+      }
+    })
   }
 }
 

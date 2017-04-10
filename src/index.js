@@ -11,6 +11,12 @@ import ChatRoom from './containers/ChatRoom'
 import SignUp from './containers/SignUp'
 import SignIn from './containers/SignIn'
 
+import {
+  ROOT_PATH,
+  USER_SIGN_UP_PATH,
+  USER_SIGN_IN_PATH,
+} from './routes'
+
 // Needed for onTouchTap
 // http://stackoverflow.com/a/34015469/988941
 injectTapEventPlugin()
@@ -18,10 +24,10 @@ injectTapEventPlugin()
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
-      <Route path="/" component={App}>
+      <Route path={ROOT_PATH} component={App}>
         <IndexRoute component={ChatRoom} />
-        <Route path="/users/sign-up" component={SignUp} />
-        <Route path="/users/sign-in" component={SignIn} />
+        <Route path={USER_SIGN_UP_PATH} component={SignUp} />
+        <Route path={USER_SIGN_IN_PATH} component={SignIn} />
       </Route>
     </Router>
   </Provider>,

@@ -1,4 +1,4 @@
-import API from '../../middleware/api'
+import API from '../../lib/api'
 import { history } from '../../store'
 
 export const USER_SIGNED_OUT = 'USER_SIGNED_OUT'

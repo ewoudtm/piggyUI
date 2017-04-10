@@ -1,4 +1,4 @@
-import API from '../../middleware/api'
+import API from '../../lib/api'
 
 const api = new API()
 const messages = api.service('messages')

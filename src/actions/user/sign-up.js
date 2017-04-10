@@ -1,4 +1,4 @@
-import API from '../../middleware/api'
+import API from '../../lib/api'
 import signIn from './sign-in'
 
 const api = new API()
