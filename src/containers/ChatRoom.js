@@ -29,7 +29,9 @@ class ChatRoom extends PureComponent {
   }
 
   submitMessage() {
-    this.props.postMessage(this.refs.message.getValue())
+    const message = this.refs.message.getValue().trim()
+    if (message === '') return
+    this.props.postMessage(message)
     this.setState({
       message: ''
     })
@@ -49,9 +51,8 @@ class ChatRoom extends PureComponent {
 
   render() {
     return (
-      <div style={{ padding: 24, paddingBottom: 156, maxHeight: '100%', width: '100%' }}>
+      <div style={{ padding: 24, paddingBottom: 206, maxHeight: '100%', width: '100%' }}>
         <div ref="chat" style={{ maxHeight: '100%', overflowY: 'auto', width: '100%' }}>
-          <h1>ChatRoom</h1>
           { this.props.messages.map((msg, index) => {
             return (
               <ChatMessage key={index} message={msg} />

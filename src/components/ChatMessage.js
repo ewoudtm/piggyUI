@@ -10,7 +10,10 @@ class ChatMessage extends PureComponent {
     return (
       <div className="message">
         <Avatar src={user.gravatar} style={{ flex: '1 40px', maxWidth: '40px' }} />
-        <p>{ message.text }</p>
+        <div className="content">
+          <h4>{ user.name }</h4>
+          <p>{ message.text }</p>
+        </div>
       </div>
     )
   }
