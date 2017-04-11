@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import muiTheme from './assets/styles/theme'
+import Navigation from './components/Navigation'
 import LoadingIndicator from './components/LoadingIndicator'
-import AppBar from 'material-ui/AppBar'
 import './App.sass'
 
 class App extends Component {
@@ -18,9 +18,7 @@ class App extends Component {
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
         <div>
-          <AppBar
-            title="Shut Up Chat"
-            iconClassNameRight="muidocs-icon-navigation-expand-more" />
+          <Navigation />
           <div className="app">
             <LoadingIndicator />
             { this.props.children }
