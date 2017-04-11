@@ -8,11 +8,13 @@ import store, { history } from './store'
 
 import App from './App'
 import ChatRoom from './containers/ChatRoom'
+import Lobby from './containers/Lobby'
 import SignUp from './containers/SignUp'
 import SignIn from './containers/SignIn'
 
 import {
   ROOT_PATH,
+  CHAT_PATH,
   USER_SIGN_UP_PATH,
   USER_SIGN_IN_PATH,
 } from './routes'
@@ -25,7 +27,8 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
       <Route path={ROOT_PATH} component={App}>
-        <IndexRoute component={ChatRoom} />
+        <IndexRoute component={Lobby} />
+        <Route path={CHAT_PATH} component={ChatRoom} />
         <Route path={USER_SIGN_UP_PATH} component={SignUp} />
         <Route path={USER_SIGN_IN_PATH} component={SignIn} />
       </Route>
