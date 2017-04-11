@@ -12,10 +12,11 @@ const darkGrey     = '#757575'
 const grey         = '#DEDEDE'
 const grey50       = 'rgba(222, 222, 222, 0.5)'
 const grey30       = 'rgba(222, 222, 222, 0.7)'
+const pink         = '#ff69b4'
 
 // Palette
 export const palette = {
-  primary1Color: red,
+  primary1Color: pink,
   primary2Color: green,
   primary3Color: green,
   accent1Color: green,
