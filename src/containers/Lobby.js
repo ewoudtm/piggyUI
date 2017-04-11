@@ -6,6 +6,7 @@ import subscribeToGames from '../actions/games/subscribe'
 import createGame from '../actions/games/create'
 import './Lobby.sass'
 
+
 class Lobby extends PureComponent {
   componentWillMount() {
     this.props.subscribeToGames()
