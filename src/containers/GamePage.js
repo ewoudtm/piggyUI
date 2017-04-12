@@ -1,6 +1,6 @@
 import React, { PureComponent, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import fetchGames from '../actions/games/fetch'
+import subscribeGames from '../actions/games/subscribe'
 import { Link } from 'react-router'
 import './GamePage.sass'
 
@@ -8,7 +8,7 @@ class GamePage extends PureComponent {
   static propTypes = {}
 
   componentDidMount() {
-    this.props.fetchGames()
+    this.props.subscribeGames()
   }
 
 
@@ -57,4 +57,4 @@ const mapStateToProps = ({ games }, { params }) => {
   }
 }
 
-export default connect(mapStateToProps, {fetchGames})(GamePage)
+export default connect(mapStateToProps, {subscribeGames})(GamePage)
