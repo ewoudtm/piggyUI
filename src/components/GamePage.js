@@ -6,17 +6,16 @@ import './GamePage.sass'
 
 class GamePage extends PureComponent {
   static propTypes = {}
-
-  componentDidMount() {
-    // this.props.fetchGames()
-  }
-
+  //
+  // componentDidMount() {
+  //   // this.props.fetchGames()
+  // }
   render() {
     return (
-      <div className='game page'>
-        <h1>Pig Die Game</h1>
-        <Link to='/'>Play Again!</Link>
-      </div>
+        <div className='game page'>
+          <h1>Pig Die Game</h1>
+          <Link to='/'>Play Again!</Link>
+        </div>
     )
   }
 }
