@@ -13,8 +13,10 @@ class GamePage extends PureComponent {
 
   render() {
     return (
-      <div className="flex-container">
+    <div className='game page'>
+       <h1>Pig Die Game</h1>
 
+      <div className="flex-container">
         <div className="flex-player">
           <div className="playerName">Player 1</div>
          <div className="gameTotal">Game Total</div>
@@ -34,8 +36,8 @@ class GamePage extends PureComponent {
          <div className="roundTotal">Round Total</div>
          <div className="cashButton">Cash</div>
         </div>
-
       </div>
+    </div>
     )
   }
 }
