@@ -30,7 +30,7 @@ class Lobby extends PureComponent {
   render() {
     return (
       <div className="games lobby">
-        <h1>Lobby</h1>
+        <h1>Games Lobby</h1>
 
         { this.props.games.length === 0 ?
           <div className="no-results">
