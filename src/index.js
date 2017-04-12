@@ -33,7 +33,7 @@ ReactDOM.render(
         <Route path={CHAT_PATH} component={ChatRoom} />
         <Route path={USER_SIGN_UP_PATH} component={SignUp} />
         <Route path={USER_SIGN_IN_PATH} component={SignIn} />
-        <Route path={GAME_PAGE} component={GamePage} />
+        <Route path="/games/:gameId" component={GamePage} />
       </Route>
     </Router>
   </Provider>,
