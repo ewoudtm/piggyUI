@@ -11,7 +11,7 @@ import ChatRoom from './containers/ChatRoom'
 import Lobby from './containers/Lobby'
 import SignUp from './containers/SignUp'
 import SignIn from './containers/SignIn'
-import GamePage from './components/GamePage'
+import GamePage from './containers/GamePage'
 
 import {
   ROOT_PATH,
