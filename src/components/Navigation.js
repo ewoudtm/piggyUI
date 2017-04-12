@@ -7,6 +7,7 @@ import { Link } from 'react-router'
 import Logo from '../images/piggy.gif'
 import signOut from '../actions/user/sign-out'
 import FlatButton from 'material-ui/FlatButton'
+import { history } from '../store'
 // import './Navigation.sass'
 
 import {
@@ -32,7 +33,7 @@ import {
   }
 
   signUp() {
-    history.push('/sign-up')
+    history.push('users/sign-up')
   }
 
   signOut(event) {
