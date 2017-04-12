@@ -16,6 +16,7 @@ export default (state = [], { type, payload } = {}) => {
 
     case GAME_UPDATED :
       return state.map((game) => {
+        console.log(payload)
         if (game._id === payload._id) {
           return Object.assign({}, payload)
         }

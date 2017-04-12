@@ -20,10 +20,10 @@ class Lobby extends PureComponent {
       label="Create Game"
       primary={true} />
   }
-  renderJoinGameButton() {
+  renderJoinGameButton(gameId) {
     console.log('joinnnnn button')
     return <RaisedButton
-      onTouchTap={this.props.joinGame}
+      onTouchTap={() => {this.props.joinGame(gameId)}}
       label="Join Game"
       primary={true} />
   }
@@ -52,7 +52,7 @@ class Lobby extends PureComponent {
                       <RaisedButton label="Go to Game" secondary={true} style={{marginRight: '1rem'}}/>
                     </Link>
                       <div className="actions">
-                        { this.renderJoinGameButton() }
+                        { this.renderJoinGameButton(game._id) }
                       </div>
                 </Paper>
               )
