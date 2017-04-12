@@ -66,6 +66,13 @@ export default store => next => action => {
         .then((result) => {
           next({ type: API_READY })
 
+          if (type === 'GAME_UPDATED') {
+            return next({
+              type,
+              payload: result
+            })
+          }
+
           return next({
             type,
             payload: result.data
