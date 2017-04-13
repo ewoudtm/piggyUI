@@ -14,9 +14,9 @@ class GamePage extends PureComponent {
 
 
   render() {
-    const { _id, title, players } = this.props
-    const player1 = players[0]
-    const player2 = players[1]
+    const { _id, title, playersdata } = this.props
+    const player1 = playersdata[0]
+    const player2 = playersdata[1]
 
     return (
     <div className='game page'>
