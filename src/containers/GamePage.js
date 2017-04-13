@@ -2,6 +2,8 @@ import React, { PureComponent, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import subscribeGames from '../actions/games/subscribe'
 import { Link } from 'react-router'
+import rollDie from '../actions/games/roll-die'
+import RaisedButton from 'material-ui/RaisedButton'
 import './GamePage.sass'
 
 class GamePage extends PureComponent {
@@ -11,12 +13,18 @@ class GamePage extends PureComponent {
     this.props.subscribeGames()
   }
 
-
+  renderRollDieButton(gameId) {
+    return <RaisedButton
+      onTouchTap={() => {this.props.rollDie(gameId)}}
+      label="Roll Die"
+      primary={true} />
+  }
 
   render() {
-    const { _id, title, players } = this.props
+    const { _id, title, players, dieRoll } = this.props
     const player1 = players[0]
     const player2 = players[1]
+    console.log(_id)
 
     return (
     <div className='game page'>
@@ -30,8 +38,10 @@ class GamePage extends PureComponent {
 
         <div className="flex-die">
          <div className="gameName">{ title }</div>
-         <div className="gameDie">Die</div>
-         <div className="rollDie">Roll Die</div>
+         <div className="gameDie">{ dieRoll }</div>
+         <div className="actions">
+           { this.renderRollDieButton(_id) }
+         </div>
         </div>
 
         <div className="flex-player color">
@@ -59,4 +69,4 @@ const mapStateToProps = ({ games }, { params }) => {
   }
 }
 
-export default connect(mapStateToProps, {subscribeGames})(GamePage)
+export default connect(mapStateToProps, {subscribeGames, rollDie})(GamePage)

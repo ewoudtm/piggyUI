@@ -59,7 +59,6 @@ export default store => next => action => {
   const apiService = api.service(service)
 
   next({ type: API_LOADING })
-
   if (authenticate) {
     return api.authenticate()
       .then(() => processRequest(action, apiService, method, params, id)

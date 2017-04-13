@@ -10,7 +10,6 @@ export default (gameId) => {
       authenticate: true,
       params: { joinGame: true },
       id: gameId,
-      // id: game._id
     }
   }
 }
