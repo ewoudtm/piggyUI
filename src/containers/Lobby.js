@@ -6,6 +6,8 @@ import subscribeToGames from '../actions/games/subscribe'
 import createGame from '../actions/games/create'
 import joinGame from '../actions/games/join'
 import { Link } from 'react-router'
+import GameEditor from './GameEditor'
+import './GameEditor.sass'
 import './Lobby.sass'
 
 
@@ -45,6 +47,7 @@ class Lobby extends PureComponent {
           </div>
 
           <div className="games-list">
+            <GameEditor />
             { this.props.games.map((game) => {
               return (
                   <div className="game-item">
