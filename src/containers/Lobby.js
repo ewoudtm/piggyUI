@@ -58,7 +58,7 @@ class Lobby extends PureComponent {
                           <RaisedButton label="Go to Game" secondary={true} style={{marginRight: '1rem'}}/>
                         </Link>
                           <div className="actions">
-                            {game.playerIds.length < 2 && this.renderJoinGameButton(game._id) }
+                            {game.players.length < 2 && this.renderJoinGameButton(game._id) }
                           </div>
                     </Paper>
                   </div>
