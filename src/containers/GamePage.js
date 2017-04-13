@@ -14,17 +14,17 @@ class GamePage extends PureComponent {
 
 
   render() {
-    const { _id, title, playersdata } = this.props
-    const player1 = playersdata[0]
-    const player2 = playersdata[1]
+    const { _id, title, players } = this.props
+    const player1 = players[0]
+    const player2 = players[1]
 
     return (
     <div className='game page'>
       <div className="flex-container">
         <div className="flex-player">
-          <div className="playerName">{ player1.name}</div>
-         <div className="gameTotal">Game Total</div>
-         <div className="roundTotal">Round Total</div>
+          <div className="playerName">{ player1.name }</div>
+         <div className="gameTotal">{ player1.gameTotal }</div>
+         <div className="roundTotal">{ player1.roundTotal }</div>
          <div className="cashButton">Cash</div>
         </div>
 
@@ -36,8 +36,8 @@ class GamePage extends PureComponent {
 
         <div className="flex-player color">
          <div className="playerName">{ player2.name }</div>
-         <div className="gameTotal">Game Total</div>
-         <div className="roundTotal">Round Total</div>
+         <div className="gameTotal">{ player2.gameTotal }</div>
+         <div className="roundTotal">{ player2.roundTotal }</div>
          <div className="cashButton">Cash</div>
         </div>
       </div>
