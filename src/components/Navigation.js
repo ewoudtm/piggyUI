@@ -8,7 +8,6 @@ import Logo from '../images/piggy.gif'
 import signOut from '../actions/user/sign-out'
 import FlatButton from 'material-ui/FlatButton'
 import { history } from '../store'
-// import './Navigation.sass'
 
 import {
   ROOT_PATH,
@@ -47,10 +46,8 @@ import {
       <div>
         <AppBar
           title="Piggggggggyyyyyyy!!!!!!!!!!!!!"
-            iconElementLeft={<img src={ Logo } onClick={this.goHome}/>}
-          onLeftIconButtonTouchTap={this.toggleMenu.bind(this)}
-          iconClassNameRight="muidocs-icon-navigation-expand-more"
-          iconElementRight={signedIn ?
+            iconElementLeft={<img src={ Logo } onClick={this.toggleMenu.bind(this)}/>}
+            iconElementRight={signedIn ?
             <FlatButton label="Sign out" onClick={this.signOut.bind(this)} /> :
             <FlatButton label="Sign up" onClick={this.signUp} />
           }
@@ -58,7 +55,7 @@ import {
         <Drawer open={this.state.open}>
           <div style={{ paddingTop: 80 }}>
             <Link to={ROOT_PATH} onTouchTap={this.toggleMenu.bind(this)}>
-              <MenuItem>Lobby</MenuItem>
+              <MenuItem>Game Lobby</MenuItem>
             </Link>
             <Link to={CHAT_PATH} onTouchTap={this.toggleMenu.bind(this)}>
               <MenuItem>Chat</MenuItem>
