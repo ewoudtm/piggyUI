@@ -9,6 +9,7 @@ import signOut from '../actions/user/sign-out'
 import FlatButton from 'material-ui/FlatButton'
 import { history } from '../store'
 
+
 import {
   ROOT_PATH,
   CHAT_PATH,
@@ -45,6 +46,7 @@ import {
     return (
       <div>
         <AppBar
+          className="navbar"
           title="Piggggggggyyyyyyy!!!!!!!!!!!!!"
             iconElementLeft={<img src={ Logo } onClick={this.toggleMenu.bind(this)}/>}
             iconElementRight={signedIn ?
