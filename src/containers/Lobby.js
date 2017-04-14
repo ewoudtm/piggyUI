@@ -24,7 +24,7 @@ class Lobby extends PureComponent {
     return <RaisedButton
       onTouchTap={() => {this.props.joinGame(gameId)}}
       label="Join Game"
-      primary={true} />
+      primary={true}/>
   }
 
   render() {
@@ -34,7 +34,7 @@ class Lobby extends PureComponent {
 
         { this.props.games.length === 0 ?
 
-        <Paper style={{padding: '12px', textAlign: 'center' }}
+        <Paper style={{padding: '12px' }}
           zDepth={1}>
           <h2>No Games yet! Feel free to create one!</h2>
           { this.renderCreateGameButton() }
@@ -52,7 +52,7 @@ class Lobby extends PureComponent {
                       zDepth={1}>
                       <h4>{game.title}</h4>
                         <Link to={`/games/${game._id}`}>
-                          <RaisedButton label="Go to Game" secondary={true} style={{marginRight: '1rem'}}/>
+                          <RaisedButton label="Go to Game" secondary={true}/>
                         </Link>
                           <div className="actions">
                             {game.players.length < 2 && this.renderJoinGameButton(game._id) }

@@ -7,6 +7,7 @@ import RaisedButton from 'material-ui/RaisedButton'
 import postMessage from '../actions/messages/post'
 import ChatMessage from '../components/ChatMessage'
 
+
 class ChatRoom extends PureComponent {
   constructor() {
     super()
