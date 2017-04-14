@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import subscribeGames from '../actions/games/subscribe'
 import { Link } from 'react-router'
 import rollDie from '../actions/games/roll-die'
-import RaisedButton from 'material-ui/RaisedButton'
 import './GamePage.sass'
 
 class GamePage extends PureComponent {
@@ -14,10 +13,9 @@ class GamePage extends PureComponent {
   }
 
   renderRollDieButton(gameId) {
-    return <RaisedButton
-      onTouchTap={() => {this.props.rollDie(gameId)}}
-      label="Roll Die"
-      primary={true} />
+    return <button className='die' onTouchTap={() => {this.props.rollDie(gameId)}}>
+      Roll die
+    </button>
   }
 
   render() {
@@ -39,9 +37,10 @@ class GamePage extends PureComponent {
         <div className="flex-die">
          <div className="gameName">{ title }</div>
          <div className="gameDie">{ dieRoll }</div>
-         <div className="actions">
-           { this.renderRollDieButton(_id) }
-         </div>
+           <div className="actions">
+             { this.renderRollDieButton(_id) }
+           </div>
+
         </div>
 
         <div className="flex-player color">

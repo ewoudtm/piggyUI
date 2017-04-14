@@ -1,14 +1,16 @@
 // import "compass/css3"
+body
+  overflow: scroll
 
 .game.page
   width: 100%
-  padding: 24px
-
+  height: 100%
+  padding: 40px
+  background-image: url('http://texturelib.com/Textures/grass/grass/grass_grass_0108_01_preview.jpg')
+  background-size: auto
 
   h1
     text-align: center
-
-
 
 .flex-container
   padding: 20
@@ -31,10 +33,10 @@
   width: 30%
   height: 100%
   margin-top: 10px
-  background: black
+  background: #FFCCCC
 
   line-height: 150px
-  color: grey
+  color: #FF69B4
   font-weight: bold
   font-size: 2.5em
   text-align: center
@@ -45,17 +47,17 @@
   width: 30%
   height: 100%
   margin-top: 10px
-  background: tomato
+  background: #BD7E4A
 
   line-height: 150px
-  color: grey
+  color: white
   font-weight: bold
   font-size: 2em
   text-align: center
 
 
 .color
-  background: blue
+  background: #4C2B21
 
 
 .playerName
@@ -76,3 +78,27 @@
 
 .gameDie
   height: 300px
+
+.die
+  display: inline-block
+  padding: 15px 25px
+  font-size: 24px
+  font-weight: bold
+  cursor: pointer
+  text-align: center
+  text-decoration: none
+  outline: none
+  color: #fff
+  background-color: #FF69B4
+  border: none
+  border-radius: 15px
+  box-shadow: 0 9px #999
+
+
+.die:hover
+  background-color: #3e8e41
+
+.die:active
+  background-color: #3e8e41
+  box-shadow: 0 5px #666
+  transform: translateY(4px)
