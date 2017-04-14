@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import subscribeGames from '../actions/games/subscribe'
 import rollDie from '../actions/games/roll-die'
 import cash from '../actions/games/cash'
+import Winner from '../images/winner.gif'
 import './GamePage.sass'
 
 class GamePage extends PureComponent {
@@ -26,6 +27,7 @@ class GamePage extends PureComponent {
 
   renderWinner(winner){
     return <div className="winner">
+            <div><img src={ Winner }/></div>
             <p> {winner} has Won!'</p>
             <a href='/'>Wanna Play Again?</a>
           </div>
