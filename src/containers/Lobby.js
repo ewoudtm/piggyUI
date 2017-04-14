@@ -6,8 +6,6 @@ import subscribeToGames from '../actions/games/subscribe'
 import createGame from '../actions/games/create'
 import joinGame from '../actions/games/join'
 import { Link } from 'react-router'
-import GameEditor from './GameEditor'
-import './GameEditor.sass'
 import './Lobby.sass'
 
 
@@ -17,11 +15,11 @@ class Lobby extends PureComponent {
   }
 
   renderCreateGameButton() {
-    return <RaisedButton
-      onTouchTap={this.props.createGame}
-      label="Create Game"
-      primary={true} />
+    return <button className="create-button" onTouchTap={this.props.createGame}>
+      Create
+    </button>
   }
+
   renderJoinGameButton(gameId) {
     return <RaisedButton
       onTouchTap={() => {this.props.joinGame(gameId)}}
@@ -42,12 +40,11 @@ class Lobby extends PureComponent {
           { this.renderCreateGameButton() }
         </Paper> :
         <div className="games-list">
-          <div className="actions">
+          <div>
             { this.renderCreateGameButton() }
           </div>
 
           <div className="games-list">
-            <GameEditor />
             { this.props.games.map((game) => {
               return (
                   <div className="game-item">
