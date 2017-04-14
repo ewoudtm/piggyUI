@@ -1,7 +1,6 @@
 import React, { PureComponent, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import subscribeGames from '../actions/games/subscribe'
-import { Link } from 'react-router'
 import rollDie from '../actions/games/roll-die'
 import cash from '../actions/games/cash'
 import './GamePage.sass'
@@ -25,6 +24,12 @@ class GamePage extends PureComponent {
     </button>
   }
 
+  renderWinner(winner){
+    return <div className="winner">
+            <p> {winner} has Won!'</p>
+            <a href='/'>Wanna Play Again?</a>
+          </div>
+  }
 
   render() {
     const { _id, title, players, dieRoll, cash } = this.props
@@ -34,6 +39,10 @@ class GamePage extends PureComponent {
 
     return (
     <div className='game page'>
+
+      { (player1.roundTotal + player1.gameTotal) >= 100 && this.renderWinner(player1.name) } :
+      { (player2.roundTotal + player2.gameTotal ) >= 100 && this.renderWinner(player2.name) }
+
       <div className="flex-container">
         <div className="flex-player">
          <div className="playerName">{ player1.name }</div>
